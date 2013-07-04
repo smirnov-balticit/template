@@ -9,10 +9,21 @@ index_ru:
   page_id: 1
   locale: ru
   name: Главная
-  content: <%= Faker::HTMLIpsum.fancy_string %>
+  content: Всё позитивный тлен
   created_at: <%= Time.now %>
   updated_at: <%= Time.now %>
-
-
-
-
+contacts_en:
+  page_id: 2
+  locale: en
+  name: Contacts
+  content: <%= [Faker::Company.name, Faker::PhoneNumber.short_phone_number].join(', ') %>
+doverie_en:
+  page_id: 3
+  locale: en
+  name: We are trusted
+  content: <%= Faker::HTMLIpsum.fancy_string %>
+vacansy_en:
+  page_id: 4
+  locale: en
+  name: Vacansy
+  content: <%= Faker::HipsterIpsum.phrases(10).join("<br />") %>

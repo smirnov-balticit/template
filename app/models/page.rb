@@ -10,7 +10,9 @@ class Page < ActiveRecord::Base
 
   translates :content, :name
   accepts_nested_attributes_for :translations
+  validates :name, presence: true
 
+  # Зачем это здесь?
   class Translation
     validates :name, presence: true
   end
@@ -18,6 +20,11 @@ class Page < ActiveRecord::Base
   extend FriendlyId
   friendly_id :slug
 
-  scope :visible, ->{ where(hidden: false) }
-  scope :invisible, ->{ where(hidden: true) }
+  scope :visible, -> { where(hidden: false) }
+  scope :invisible, -> { where(hidden: true) }
+  scope :without, (lambda do |field, values|
+    raise "Unknown field :#{field} in Box model" unless field.to_s.in? attribute_names
+    values = [values] unless values.is_a? Array
+    where("#{field} NOT IN (?)", values)
+  end)
 end

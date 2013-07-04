@@ -15,12 +15,12 @@
 *.sassc
 .sass-cache
 capybara-*.html
-.rspec
 .rvmrc
 .DS_Store
 /.bundle
 /vendor/bundle
 /log/*
+**.log
 /tmp/*
 /public/uploads/*
 /db/*.sqlite3
@@ -34,3 +34,4 @@ pickle-email-*.html
 .project
 /nbproject/private/
 /nbproject
+/config/database.yml

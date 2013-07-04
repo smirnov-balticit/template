@@ -21,4 +21,3 @@ jQuery ->
     noty
       text: I18n.t('js.send_error')
       type: 'error'
-

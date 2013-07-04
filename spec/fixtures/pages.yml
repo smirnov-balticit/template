@@ -1,6 +1,13 @@
 index:
   id: 1
   slug: index
-
-
-
+contacts:
+  id: 2
+  slug: contacts
+doverie:
+  id: 3
+  slug: doverie
+vacansy:
+  id: 4
+  slug: vacansy
+  hidden: true

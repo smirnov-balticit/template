@@ -29,6 +29,8 @@ module NavigationHelpers
     # ....
     # your own paths go here
     # ...
+    when /^the page with slug "(.*?)"$/
+      slug_path $1
     else
       begin
         page_name =~ /^the (.*) page$/
