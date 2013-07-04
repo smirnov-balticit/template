@@ -4,6 +4,7 @@
 см. [DEPLOY.md](DEPLOY.md)
 
 ## Default database.yml:
+```yaml
 development:
   adapter: mysql2
   encoding: utf8
@@ -27,3 +28,4 @@ production:
 
 cucumber:
   <<: *test
+```
