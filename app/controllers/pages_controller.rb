@@ -4,29 +4,38 @@ class PagesController < ApplicationController
 
   def show
     @page = Page.find_by_slug(params[:slug]) || Page.find(params[:slug])
-    if File.exists?(Rails.root.join("app", "views", params[:controller], "#{params[:slug]}.html.erb"))
-      render params[:slug]
-    else
-      puts 'no'
-    end
+    render params[:slug] if controller_view_exists?(params[:slug])
   end
 
-  def menu_main 
+  def menu_main
     @page = Page.find_by_slug(params['slug'])
-    @top_menu = @page.root.siblings.where(hidden: false) 
-    @middle_menu = @page.ancestors.where(hidden: false)
-    @bottom_menu = @page.children.where(hidden: false)
-    @main_menu = @page.siblings.where(hidden: false)  
-  end 
+    @top_menu = @page.root.siblings.visible
+    @middle_menu = @page.ancestors.visible
+    @bottom_menu = @page.children.visible
+    @main_menu = @page.siblings.visible
+  end
 
   private
-    def layout
-      main_layout = 'application'
-      if @page && @page.layout != main_layout && File.exists?(Rails.root.join("app", "views", "layouts", "#{@page.layout}.html.erb"))
-        @page.layout
-      else
-        main_layout
-      end
+
+  def view_exists?(view)
+    File.exists? Rails.root.join("app", "views", view)
+  end
+
+  def controller_view_exists?(name)
+    view_exists?("#{params[:controller]}/#{name}.html.erb")
+  end
+
+  def layout_exists?(name)
+    view_exists?("layouts/#{name}.html.erb")
+  end
+
+  def layout
+    main_layout = 'application'
+    if @page && @page.layout != main_layout && layout_exists?(@page.layout)
+      @page.layout
+    else
+      main_layout
     end
+  end
 
 end

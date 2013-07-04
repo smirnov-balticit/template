@@ -11,11 +11,13 @@ class Page < ActiveRecord::Base
   translates :content, :name
   accepts_nested_attributes_for :translations
 
-
   class Translation
     validates :name, presence: true
   end
 
   extend FriendlyId
   friendly_id :slug
+
+  scope :visible, ->{ where(hidden: false) }
+  scope :invisible, ->{ where(hidden: true) }
 end
