@@ -3,7 +3,8 @@
 ## Деплой
 см. [DEPLOY.md](DEPLOY.md)
 
-## Default database.yml:
+## База
+### config/database.yml:
 ```yaml
 development:
   adapter: mysql2
