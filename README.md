@@ -4,7 +4,7 @@
 см. [DEPLOY.md](DEPLOY.md)
 
 ## База
-### config/database.yml:
+### Пример config/database.yml:
 ```yaml
 development:
   adapter: mysql2
