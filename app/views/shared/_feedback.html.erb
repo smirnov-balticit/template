@@ -1,0 +1,14 @@
+<% feedback = @feedback || Feedback.new %>
+
+<div class="feedback" id="feedback">
+  <%= form_for Feedback.new, remote: true do |f| %>
+    <div class="feedback-bg"></div>
+    <div class="feedback-controls">
+      <%= f.text_field :email, placeholder: t('mailer.email'),
+                         class: 'input-block-level feedback-control' %>
+      <%= f.text_area :message, placeholder: t('mailer.message'), rows: 4,
+                       class: 'input-block-level feedback-control' %>
+    </div>
+    <%= f.submit t('mailer.send'), class: 'feedback-btn' %>
+  <% end %>
+</div>

@@ -205,6 +205,8 @@ GEM
     email_spec (1.4.0)
       launchy (~> 2.1)
       mail (~> 2.2)
+    email_validator (1.4.0)
+      activemodel
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (1.4.0)
@@ -458,6 +460,7 @@ DEPENDENCIES
   debugger
   eco
   email_spec
+  email_validator
   exception_notification!
   factory_girl_rails
   ffaker

@@ -8,8 +8,8 @@ Feature: Pages
   Scenario Outline: Send feedback mail from contacts page
     Given there is a admin user with the email "admin@example.com"
     When I am on the page with slug "contacts"
-    Then I fill in "feedback-email" with "<email>"
-    And I fill in "feedback-message" with "<message>"
+    Then I fill in "feedback_email" with "<email>"
+    And I fill in "feedback_message" with "<message>"
     When I press "Send"
     Then I should see "<result>"
     Then "admin@example.com" should receive <got> email with subject "You have new feedback message"
