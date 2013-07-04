@@ -9,10 +9,12 @@ class PagesController < ApplicationController
 
   def menu_main
     @page = Page.find_by_slug(params['slug'])
-    @top_menu = @page.root.siblings.visible
-    @middle_menu = @page.ancestors.visible
-    @bottom_menu = @page.children.visible
-    @main_menu = @page.siblings.visible
+    if @page
+      @top_menu = @page.root.siblings.visible
+      @middle_menu = @page.ancestors.visible
+      @bottom_menu = @page.children.visible
+      @main_menu = @page.siblings.visible
+    end
   end
 
   private

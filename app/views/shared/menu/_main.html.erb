@@ -1,0 +1,11 @@
+<% if @main_menu.present? %>
+  <div>
+    <ul>
+      <% @main_menu.each do |page| %>
+        <li>
+          <%= link_to content_tag(:span, page[:name]), slug_path(slug: page[:slug]) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
