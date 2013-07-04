@@ -36,6 +36,14 @@ GIT
       ruby-progressbar
 
 GIT
+  remote: git://github.com/smartinez87/exception_notification.git
+  revision: 62cc3dc3e49e6980fb8f48e93bd16c627e7200c2
+  specs:
+    exception_notification (4.0.0.rc1)
+      actionmailer (>= 3.0.4)
+      activesupport (>= 3.0.4)
+
+GIT
   remote: git://github.com/wayneeseguin/rvm-capistrano.git
   revision: e51a3c6aef1f5c0db13f45d1ba440fad0cd722e3
   specs:
@@ -199,8 +207,6 @@ GEM
       mail (~> 2.2)
     erubis (2.7.0)
     eventmachine (1.0.3)
-    exception_notification (3.0.1)
-      actionmailer (>= 3.0.4)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (4.2.0)
@@ -452,7 +458,7 @@ DEPENDENCIES
   debugger
   eco
   email_spec
-  exception_notification
+  exception_notification!
   factory_girl_rails
   ffaker
   friendly_id

@@ -38,7 +38,7 @@ gem 'russian'
 
 gem 'unicorn'
 gem 'whenever'
-gem 'exception_notification'
+gem 'exception_notification', github: 'smartinez87/exception_notification'
 
 gem 'roboto'
 
