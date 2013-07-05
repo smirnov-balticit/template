@@ -14,3 +14,43 @@ ru:
   translation:
     en: "English"
     ru: "Русский"
+  activerecord:
+    models:
+      admin_user:
+        one: Администратор
+        other: Администраторы
+      feedback:
+        Обратная связь
+      page:
+        zero: Страниц
+        one: Страница
+        few: Страницы
+        many: Страниц
+        other: Страницы
+    attributes:
+      admin_user:
+        id: Номер
+        email: Емайл
+        current_sign_in_at: Время текущего входа
+        last_sign_in_at: Врема последнего входа
+        current_sign_in_ip: Текущий IP
+        last_sign_in_ip: Последний IP
+        created_at: Дата создания
+        updated_at: Дата обновления
+        sign_in_count: Число входов
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+      feedback:
+        id: Номер
+        email: Емайл
+        message: Сообщение
+        created_at: Дата создания
+        updated_at: Дата обновления
+      page:
+        id: Номер
+        name: Заголовок
+        slug: Псевдоним
+        parent: Родительская страница
+        parent_id: Родительская страница
+        hidden: Скрытая
+        layout: Шаблон для страницы
