@@ -43,6 +43,9 @@ gem 'exception_notification', github: 'smartinez87/exception_notification'
 
 gem 'roboto'
 
+gem 'ffaker'
+gem 'factory_girl_rails'
+
 group :test do
   gem 'cucumber'
   gem 'cucumber_factory'
@@ -85,8 +88,6 @@ group :development, :test do
   gem 'debugger'
   gem 'rspec-rails'
   gem 'cucumber-rails', :require => false
-  gem 'ffaker'
-  gem 'factory_girl_rails'
 end
 
 gem 'rename' # For rename project with one comand "rails g rename:app_to New-Name"
