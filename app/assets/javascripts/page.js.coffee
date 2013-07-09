@@ -5,8 +5,7 @@ $(document).ready ->
 	  if !$(this).hasClass 'current' 
 		  $links = $(this).find '.nested_links'
 		  $links.removeClass 'hidden'
-            
-        
+
   $(".menu_item").bind 'mouseleave', (event) ->
     $links = $(this).find('.nested_links')
     $links.addClass('hidden')
