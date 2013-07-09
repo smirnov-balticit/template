@@ -1,8 +1,6 @@
 <nav class="header-menu">
 <ul>
-  <% Page.all.each do |page| %>
-    <% unless page.hidden?  %>
-      <% if page.root? %>
+  <% Page.roots.visible.each do |page| %>
         <li class="#{class_attr} menu_item">
           <%= link_to content_tag(:span, page.name), slug_path(page) %>
           <ul class="nested_links hidden">
@@ -12,7 +10,5 @@
           </ul>
         </li>
       <% end %>
-    <% end %>
-  <% end %>
 </ul>
 </nav>

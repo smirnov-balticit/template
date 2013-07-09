@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   layout :layout
-  before_filter :menu_main
 
   def show
     @page = Page.find_by_slug(params[:slug]) || Page.find(params[:slug])
