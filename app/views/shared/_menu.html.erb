@@ -1,10 +1,18 @@
 <nav class="header-menu">
-    <%= render 'shared/menu/top' %>
-    <% if @page && @page != @page.root  %>
-      <div>
-        <%= render 'shared/menu/middle' %>
-        <%= render 'shared/menu/main' %>
-      </div>
+<ul>
+  <% Page.all.each do |page| %>
+    <% unless page.hidden?  %>
+      <% if page.root? %>
+        <li class="#{class_attr} menu_item">
+          <%= link_to content_tag(:span, page.name), slug_path(page) %>
+          <ul class="nested_links hidden">
+		        <% page.children.each do |child| %>
+		          	<%= link_to content_tag(:span, child.name), slug_path(child) %>
+		        <% end %>  
+          </ul>
+        </li>
+      <% end %>
     <% end %>
- <%= render 'shared/menu/bottom' %>
+  <% end %>
+</ul>
 </nav>
