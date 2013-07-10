@@ -27,6 +27,8 @@ ru:
         few: Страницы
         many: Страниц
         other: Страницы
+      seo:
+        СЕО
     attributes:
       admin_user:
         id: Номер
@@ -52,5 +54,14 @@ ru:
         slug: Псевдоним
         parent: Родительская страница
         parent_id: Родительская страница
+        ancestry: Родительская страница
         hidden: Скрытая
         layout: Шаблон для страницы
+        created_at: Дата создания
+        updated_at: Дата обновления
+      seo:
+        title: Заголовок
+        keywords: Ключевые слова
+        description: Описание
+        created_at: Дата создания
+        updated_at: Дата обновления
