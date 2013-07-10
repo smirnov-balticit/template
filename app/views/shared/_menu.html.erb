@@ -1,9 +1,14 @@
 <nav class="header-menu">
-    <%= render 'shared/menu/top' %>
-    <% if @page && @page != @page.root  %>
-      <div>
-        <%= render 'shared/menu/middle' %>
-        <%= render 'shared/menu/main' %>
-      </div>
-    <% end %>
+	<ul>
+		<% Page.roots.visible.each do |page| %>
+			<li class="#{class_attr} menu_item">
+				<%= link_to content_tag(:span, page.name), slug_path(page) %>
+				<ul class="nested_links hidden">
+				  <% page.children.each do |child| %>
+				  	<%= link_to content_tag(:span, child.name), slug_path(child) %>
+				  <% end %>  
+				</ul>
+			</li>
+		<% end %>
+	</ul>
 </nav>
