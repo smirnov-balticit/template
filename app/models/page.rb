@@ -1,6 +1,6 @@
 class Page < ActiveRecord::Base
   attr_accessible :slug, :hidden, :seo_id, :seo_attributes, :layout,
-                  :translations_attributes, :translations, :parent_id
+                  :translations_attributes, :translations, :parent_id, :name
 
   belongs_to :seo
   has_ancestry
