@@ -2,7 +2,9 @@
 ActiveAdmin.register Page do
   menu :priority => 3
   config.batch_actions = false
+  config.sort_order = 'position_asc'
 
+  sortable
 
   controller do
     def new
@@ -18,9 +20,11 @@ ActiveAdmin.register Page do
   end
 
   index do
+    sortable_handle_column
     column :id
+    column :position, :sortable => :position
     column :name
-    column :slug, sortable: false
+    column :slug
     column :parent
     column :hidden do |resource|
       resource.hidden? ? 'Да' : 'Нет'
