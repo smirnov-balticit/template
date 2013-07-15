@@ -148,6 +148,7 @@ GEM
     ckeditor (4.0.4)
       mime-types
       orm_adapter
+    client_side_validations (3.2.5)
     code_analyzer (0.3.2)
       sexp_processor
     coderay (1.0.9)
@@ -453,6 +454,7 @@ DEPENDENCIES
   capybara-screenshot
   carrierwave
   ckeditor
+  client_side_validations
   coffee-rails (~> 3.2.1)
   compass-rails
   cucumber
