@@ -21,7 +21,7 @@ describe Page do
       page.should have(1).errors_on(:slug)
     end
 
-    context 'when slug is blank' do
+    context 'when slug blank' do
       context 'when there is only russian translation' do
         it 'should be filled with transliterated name' do
           rus = FactoryGirl.build(:page_translation, locale: :ru, name: 'Всероссийская ассоциация ежей')
@@ -49,6 +49,14 @@ describe Page do
           page.slug = ' '
           page.should have(1).errors_on(:slug)
         end
+      end
+    end
+
+    context 'when slug present' do
+      it 'should not be changed after validation' do
+        page.slug = 'world-hedgehogs-association'
+        page.should be_valid
+        page.slug.should == 'world-hedgehogs-association'
       end
     end
   end
