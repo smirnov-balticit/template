@@ -8,6 +8,17 @@ describe Page do
     page.should be_valid
   end
 
+  describe '#content' do
+    it 'should be valid html' do
+      ['<div> left oak', 'right oak </div>', '<div>center oak</span>'].each do |html|
+        page.content = html
+        page.should have(1).errors_on(:content)
+      end
+      page.content = "<div>right oak</div><a href='forest'>oaks forest</a>"
+      page.should be_valid
+    end
+  end
+
   describe '#name' do
     it 'should not be empty' do
       page.name = ' '
