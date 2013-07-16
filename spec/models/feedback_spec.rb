@@ -18,7 +18,6 @@ describe Feedback do
 
     it 'should be valid' do
       ["fat@@hedgehog.com", "thin!@hedgehog.com", "drunk@hedgehog./"].each do |email|
-        puts "-> #{email}"
         feedback.email = email
         feedback.should be_invalid
       end
