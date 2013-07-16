@@ -32,14 +32,14 @@ describe Feedback do
       end
     end
 
-    it 'should have size 6-2048 symbols' do
-      feedback.message = 'gunner'
+    it 'should have size 10-2048 symbols' do
+      feedback.message = 'hedgehog^2'
       feedback.should be_valid
 
-      feedback.message = 'lolol'
+      feedback.message = 'hedgehog+'
       feedback.should be_invalid
 
-      feedback.message = 'l' * 2048
+      feedback.message = 'x' * 2048
       feedback.should be_valid
 
       feedback.message = 'o' * 2049
