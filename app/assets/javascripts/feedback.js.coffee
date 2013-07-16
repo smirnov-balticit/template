@@ -10,11 +10,6 @@ jQuery ->
         text: I18n.t('js.wrong_email')
         type: 'error'
       return false
-    if $('#feedback_message').val().length < 10
-      noty
-        text: I18n.t('js.short_message')
-        type: 'error'
-      return false
   $('form#new_feedback').on 'ajax:success', ->
     noty text: I18n.t('js.send_success')
   $('form#new_feedback').on 'ajax:error', ->

@@ -2,7 +2,6 @@
 
 <%= semantic_form_for [:admin, resource] do |f| %>
   <%= f.inputs "Основное" do %>
-    <%= f.input :slug, label: 'Псевдоним для seo' %>
     <%= f.input :position %>
     <%= f.input :hidden, label: 'Скрыть пункт меню' %>
     <%= f.input :parent_id, as: :select,
@@ -24,18 +23,21 @@
     <% end %>
   </div>
 
-  <%= f.semantic_fields_for :seo do |j| %>
-    <div class="globalize-inputs globalize-seo">
-      <%= j.globalize_inputs :translations do |lf| %>
-        <%= lf.inputs do %>
-          <%= lf.input :title, input_html: {rows:1} %>
-          <%= lf.input :keywords, input_html: {rows:1} %>
-          <%= lf.input :description, input_html: {rows:1} %>
+  <%= f.inputs "SEO" do %>
+    <%= f.input :slug, required: false %>
+    <%= f.semantic_fields_for :seo do |j| %>
+      <div class="globalize-inputs globalize-seo">
+        <%= j.globalize_inputs :translations do |lf| %>
+          <%= lf.inputs do %>
+            <%= lf.input :title, input_html: {rows:1} %>
+            <%= lf.input :keywords, input_html: {rows:1} %>
+            <%= lf.input :description, input_html: {rows:1} %>
 
-          <%= lf.input :locale, :as => :hidden %>
+            <%= lf.input :locale, :as => :hidden %>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   <% end %>
 
   <%= f.actions %>
