@@ -3,6 +3,7 @@
 <%= semantic_form_for [:admin, resource] do |f| %>
   <%= f.inputs "Основное" do %>
     <%= f.input :slug, label: 'Псевдоним для seo' %>
+    <%= f.input :position %>
     <%= f.input :hidden, label: 'Скрыть пункт меню' %>
     <%= f.input :parent_id, as: :select,
                 collection: Hash[Page.all.map{|page| ["#{page.name}-#{page.id}", page.id]}] %>

@@ -71,6 +71,8 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.2.1)
+    activeadmin-sortable (0.0.1)
+      activeadmin (~> 0.4)
     activemodel (3.2.13)
       activesupport (= 3.2.13)
       builder (~> 3.0.0)
@@ -85,6 +87,8 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
+    acts_as_list (0.2.0)
+      activerecord (>= 3.0)
     addressable (2.3.5)
     ancestry (2.0.0)
       activerecord (>= 3.0.0)
@@ -441,6 +445,8 @@ DEPENDENCIES
   ActiveAdmin-Globalize3-inputs
   action_mailer_cache_delivery
   activeadmin!
+  activeadmin-sortable
+  acts_as_list
   ancestry
   better_errors
   binding_of_caller
