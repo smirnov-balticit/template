@@ -24,7 +24,7 @@
   </div>
 
   <%= f.inputs "SEO" do %>
-    <%= f.input :slug, label: 'Псевдоним страницы', required: false %>
+    <%= f.input :slug, required: false %>
     <%= f.semantic_fields_for :seo do |j| %>
       <div class="globalize-inputs globalize-seo">
         <%= j.globalize_inputs :translations do |lf| %>
