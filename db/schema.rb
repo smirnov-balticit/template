@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130704125027) do
+ActiveRecord::Schema.define(:version => 20130715131348) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -91,10 +91,12 @@ ActiveRecord::Schema.define(:version => 20130704125027) do
     t.integer  "seo_id"
     t.string   "layout",     :default => "application"
     t.string   "ancestry"
+    t.integer  "position"
   end
 
   add_index "pages", ["ancestry"], :name => "index_pages_on_ancestry"
   add_index "pages", ["layout"], :name => "index_pages_on_layout"
+  add_index "pages", ["position"], :name => "index_pages_on_position"
   add_index "pages", ["seo_id"], :name => "index_pages_on_seo_id"
   add_index "pages", ["slug"], :name => "index_pages_on_slug", :unique => true
 
