@@ -14,3 +14,12 @@ ru:
   translation:
     en: "English"
     ru: "Русский"
+  formtastic:
+    yes:      Да
+    no:       Нет
+    create:   Создать
+    update:   Обновить
+    submit:   Утвердить
+    cancel:   Отменить
+    reset:    Сбросить
+    required: требуется
