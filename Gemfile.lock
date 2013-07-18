@@ -1,13 +1,13 @@
 GIT
   remote: git://github.com/fnando/i18n-js.git
-  revision: eeec14066b50f72876aa789c9b1f226172452798
+  revision: eab4137f83777963f0ebe6960704a7f64fd8911d
   specs:
     i18n-js (2.1.2)
       i18n
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: d7c784a2f1b1388187703e9b9fad18e9ade85f5c
+  revision: ec9996406df5c07f4720eabc0120f710ae46c997
   specs:
     activeadmin (0.6.0)
       arbre (>= 1.0.1)
@@ -24,7 +24,7 @@ GIT
 
 GIT
   remote: git://github.com/railsbp/rails_best_practices.git
-  revision: 8e4bee6fa694e4c35f9baaf1c5b7a7c9a68c02ad
+  revision: ed4064aeea3cd56c9a51df393fa21a2c917e77a3
   specs:
     rails_best_practices (1.13.8)
       activesupport
@@ -37,17 +37,17 @@ GIT
 
 GIT
   remote: git://github.com/smartinez87/exception_notification.git
-  revision: 62cc3dc3e49e6980fb8f48e93bd16c627e7200c2
+  revision: b977b653da0ea674096a0451ac8b5925a590a3b8
   specs:
-    exception_notification (4.0.0.rc1)
+    exception_notification (4.0.0)
       actionmailer (>= 3.0.4)
       activesupport (>= 3.0.4)
 
 GIT
   remote: git://github.com/wayneeseguin/rvm-capistrano.git
-  revision: e51a3c6aef1f5c0db13f45d1ba440fad0cd722e3
+  revision: b5a825e5937429d51f765b3e088377a31874ac5f
   specs:
-    rvm-capistrano (1.4.0.rc2)
+    rvm-capistrano (1.4.1)
       capistrano (>= 2.0.0)
 
 GEM
@@ -71,6 +71,8 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.2.1)
+    activeadmin-sortable (0.0.1)
+      activeadmin (~> 0.4)
     activemodel (3.2.13)
       activesupport (= 3.2.13)
       builder (~> 3.0.0)
@@ -85,6 +87,8 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
+    acts_as_list (0.2.0)
+      activerecord (>= 3.0)
     addressable (2.3.5)
     ancestry (2.0.0)
       activerecord (>= 3.0.0)
@@ -92,7 +96,7 @@ GEM
       activesupport (>= 3.0.0)
     arel (3.0.2)
     awesome_print (1.1.0)
-    bcrypt-ruby (3.0.1)
+    bcrypt-ruby (3.1.1)
     better_errors (0.9.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -137,9 +141,10 @@ GEM
       xpath (~> 2.0)
     capybara-screenshot (0.3.11)
       capybara (>= 1.0, < 3)
-    carrierwave (0.8.0)
+    carrierwave (0.9.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
+      json (>= 1.7)
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
     chronic (0.9.1)
@@ -147,6 +152,7 @@ GEM
     ckeditor (4.0.4)
       mime-types
       orm_adapter
+    client_side_validations (3.2.5)
     code_analyzer (0.3.2)
       sexp_processor
     coderay (1.0.9)
@@ -156,7 +162,7 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.6.2)
+    coffee-script-source (1.6.3)
     colored (1.2)
     columnize (0.3.6)
     compass (0.12.2)
@@ -165,11 +171,12 @@ GEM
       sass (~> 3.1)
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
-    cucumber (1.3.2)
+    cucumber (1.3.4)
       builder (>= 2.1.2)
       diff-lcs (>= 1.1.3)
       gherkin (~> 2.12.0)
-      multi_json (~> 1.3)
+      multi_json (~> 1.7.5)
+      multi_test (~> 0.0.1)
     cucumber-rails (1.3.1)
       capybara (>= 1.1.2)
       cucumber (>= 1.2.0)
@@ -185,17 +192,17 @@ GEM
     daemons (1.1.9)
     database_cleaner (1.0.1)
     debug_inspector (0.0.2)
-    debugger (1.6.0)
+    debugger (1.6.1)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
-      debugger-ruby_core_source (~> 1.2.1)
+      debugger-ruby_core_source (~> 1.2.3)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.3)
-    devise (2.2.4)
+    devise (3.0.0)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
-      railties (~> 3.1)
-      warden (~> 1.2.1)
+      railties (>= 3.2.6, < 5)
+      warden (~> 1.2.3)
     diff-lcs (1.2.4)
     eco (1.0.0)
       coffee-script
@@ -205,6 +212,8 @@ GEM
     email_spec (1.4.0)
       launchy (~> 2.1)
       mail (~> 2.2)
+    email_validator (1.4.0)
+      activemodel
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (1.4.0)
@@ -219,7 +228,7 @@ GEM
     faraday_middleware (0.9.0)
       faraday (>= 0.7.4, < 0.9)
     fastercsv (1.5.5)
-    ffaker (1.16.1)
+    ffaker (1.16.2)
     ffi (1.9.0)
     formtastic (2.2.1)
       actionpack (>= 3.0)
@@ -270,15 +279,16 @@ GEM
     mime-types (1.23)
     mini_magick (3.6.0)
       subexec (~> 0.2.1)
-    mini_portile (0.5.0)
+    mini_portile (0.5.1)
     multi_json (1.7.7)
+    multi_test (0.0.1)
     multipart-post (1.2.0)
     mysql2 (0.3.11)
-    net-scp (1.1.1)
+    net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
-    net-ssh (2.6.7)
+    net-ssh (2.6.8)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     nokogiri (1.6.0)
@@ -336,17 +346,17 @@ GEM
       actionpack (>= 3.0.0)
       rails (>= 3.1.0)
     route_translator (3.1.0)
-    rspec-core (2.13.1)
-    rspec-expectations (2.13.0)
+    rspec-core (2.14.3)
+    rspec-expectations (2.14.0)
       diff-lcs (>= 1.1.3, < 2.0)
-    rspec-mocks (2.13.1)
-    rspec-rails (2.13.2)
+    rspec-mocks (2.14.1)
+    rspec-rails (2.14.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
-      rspec-core (~> 2.13.0)
-      rspec-expectations (~> 2.13.0)
-      rspec-mocks (~> 2.13.0)
+      rspec-core (~> 2.14.0)
+      rspec-expectations (~> 2.14.0)
+      rspec-mocks (~> 2.14.0)
     ruby-progressbar (1.1.1)
     ruby2ruby (2.0.6)
       ruby_parser (~> 3.1)
@@ -412,17 +422,17 @@ GEM
       http_parser.rb (~> 0.5.1)
       simple_oauth (~> 0.1.4)
     tzinfo (0.3.37)
-    uglifier (2.1.1)
+    uglifier (2.1.2)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
     unicorn (4.6.3)
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    warden (1.2.1)
+    warden (1.2.3)
       rack (>= 1.0)
     websocket (1.0.7)
-    whenever (0.8.2)
+    whenever (0.8.3)
       activesupport (>= 2.3.4)
       chronic (>= 0.6.3)
     xpath (2.0.0)
@@ -435,6 +445,8 @@ DEPENDENCIES
   ActiveAdmin-Globalize3-inputs
   action_mailer_cache_delivery
   activeadmin!
+  activeadmin-sortable
+  acts_as_list
   ancestry
   better_errors
   binding_of_caller
@@ -448,6 +460,7 @@ DEPENDENCIES
   capybara-screenshot
   carrierwave
   ckeditor
+  client_side_validations
   coffee-rails (~> 3.2.1)
   compass-rails
   cucumber
@@ -458,6 +471,7 @@ DEPENDENCIES
   debugger
   eco
   email_spec
+  email_validator
   exception_notification!
   factory_girl_rails
   ffaker

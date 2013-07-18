@@ -1,6 +1,6 @@
 ru:
   footer:
-    text: "Компания BalticIT"
+    text: "Компания"
   mailer:
     email: "Введите ваш e-mail"
     message: "Введите ваше сообщение"
@@ -23,3 +23,55 @@ ru:
     cancel:   Отменить
     reset:    Сбросить
     required: требуется
+  activerecord:
+    models:
+      admin_user:
+        one: Администратор
+        other: Администраторы
+      feedback:
+        Обратная связь
+      page:
+        zero: Страниц
+        one: Страница
+        few: Страницы
+        many: Страниц
+        other: Страницы
+      seo:
+        СЕО
+    attributes:
+      admin_user:
+        id: Номер
+        email: Емайл
+        current_sign_in_at: Время текущего входа
+        last_sign_in_at: Врема последнего входа
+        current_sign_in_ip: Текущий IP
+        last_sign_in_ip: Последний IP
+        created_at: Дата создания
+        updated_at: Дата обновления
+        sign_in_count: Число входов
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+      feedback:
+        id: Номер
+        email: Емайл
+        message: Сообщение
+        created_at: Дата создания
+        updated_at: Дата обновления
+      page:
+        ancestry: Родительская страница
+        created_at: Дата создания
+        hidden: Скрытая
+        id: Номер
+        layout: Шаблон для страницы
+        name: Заголовок
+        parent: Родительская страница
+        parent_id: Родительская страница
+        position: Позиция
+        slug: Псевдоним
+        updated_at: Дата обновления
+      seo:
+        title: Заголовок
+        keywords: Ключевые слова
+        description: Описание
+        created_at: Дата создания
+        updated_at: Дата обновления

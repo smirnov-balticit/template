@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130702115400) do
+ActiveRecord::Schema.define(:version => 20130715131348) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -62,6 +62,15 @@ ActiveRecord::Schema.define(:version => 20130702115400) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
+  create_table "feedbacks", :force => true do |t|
+    t.string   "email"
+    t.text     "message"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "feedbacks", ["email"], :name => "index_feedbacks_on_email"
+
   create_table "page_translations", :force => true do |t|
     t.integer  "page_id"
     t.string   "locale"
@@ -82,10 +91,12 @@ ActiveRecord::Schema.define(:version => 20130702115400) do
     t.integer  "seo_id"
     t.string   "layout",     :default => "application"
     t.string   "ancestry"
+    t.integer  "position"
   end
 
   add_index "pages", ["ancestry"], :name => "index_pages_on_ancestry"
   add_index "pages", ["layout"], :name => "index_pages_on_layout"
+  add_index "pages", ["position"], :name => "index_pages_on_position"
   add_index "pages", ["seo_id"], :name => "index_pages_on_seo_id"
   add_index "pages", ["slug"], :name => "index_pages_on_slug", :unique => true
 

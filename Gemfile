@@ -18,6 +18,10 @@ gem 'i18n-js', :github => 'fnando/i18n-js'
 gem 'globalize3'
 gem 'ActiveAdmin-Globalize3-inputs'
 gem 'ancestry'
+gem 'email_validator', require: 'email_validator/strict'
+gem 'client_side_validations'
+gem 'acts_as_list'
+gem 'activeadmin-sortable'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -42,11 +46,11 @@ gem 'exception_notification', github: 'smartinez87/exception_notification'
 
 gem 'roboto'
 
-group :test do
-  gem 'rspec-rails'
+gem 'ffaker'
+gem 'factory_girl_rails'
 
+group :test do
   gem 'cucumber'
-  gem 'cucumber-rails', :require => false
   gem 'cucumber_factory'
   gem 'cucumber-websteps'
 
@@ -85,8 +89,8 @@ end
 
 group :development, :test do
   gem 'debugger'
-  gem 'ffaker'
-  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  gem 'cucumber-rails', :require => false
 end
 
 gem 'rename' # For rename project with one comand "rails g rename:app_to New-Name"

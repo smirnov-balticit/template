@@ -1,8 +1,10 @@
 # Encoding: utf-8
 ActiveAdmin.register Page do
-  menu :label => 'Страницы', :priority => 3
+  menu :priority => 3
   config.batch_actions = false
+  config.sort_order = 'position_asc'
 
+  sortable
 
   controller do
     def new
@@ -18,11 +20,13 @@ ActiveAdmin.register Page do
   end
 
   index do
+    sortable_handle_column
     column :id
-    column 'Заголовок', :name
-    column 'Псевдоним',:slug, sortable:false
-    column 'Меню-родитель', :parent
-    column "Скрытый", :hidden do |resource|
+    column :position, :sortable => :position
+    column :name
+    column :slug
+    column :parent
+    column :hidden do |resource|
       resource.hidden? ? 'Да' : 'Нет'
     end
     default_actions

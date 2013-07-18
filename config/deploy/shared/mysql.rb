@@ -1,8 +1,10 @@
+require 'securerandom'
+
 namespace :db do
   namespace :mysql do
     set(:mysql_root_password){ Capistrano::CLI.password_prompt("MySQL root password: ") }
     set(:mysql_db_user_password){ SecureRandom.base64 }
-    set(:mysql_db_name){ "#{application}_#{rails_env}" }
+    set(:mysql_db_name){ "#{application}_#{rails_env}"[0..15] }
     set(:mysql_db_user) { "#{application}_#{rails_env}" }
 
     def mysql_root_sql(query)

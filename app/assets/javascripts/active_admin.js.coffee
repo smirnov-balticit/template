@@ -1,4 +1,6 @@
 #= require active_admin/base
+#= require activeadmin-sortable
+
 jQuery ->
   customTabs $('.globalize-content')
   customTabs $('.globalize-seo')
